@@ -15,8 +15,10 @@ public class JokeController {
     }
 
     //This is meant by mapping to root - aka the homepage of the url
+    //in this case "localhost:8080"
     @RequestMapping({"/", ""})
     public String showJoke(Model model) {
+        //remember, model works with Thymeleaf to show the joke
         model.addAttribute("joke", jokeService.getJoke());
 
         return "index";
